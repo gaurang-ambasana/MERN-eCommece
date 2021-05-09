@@ -65,14 +65,14 @@ const Rating = ({ value, text }) => {
         ></i>
       </span>
 
-      <span>{text ? text : ""}</span>
+      <span title={`based on ${text} reviews`}>{text ? `(${text})` : ""}</span>
     </div>
   );
 };
 
 Rating.propTypes = {
   value: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.number.isRequired,
 };
 
 export default Rating;
