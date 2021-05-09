@@ -16,7 +16,7 @@ const Header = () => {
                 <i className="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
               <Nav.Link style={{ color: "white", opacity: 0.8 }} href="/login">
-                <i className="fas fa-user"></i> Signin
+                <i className="fas fa-user"></i> Sign In
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
