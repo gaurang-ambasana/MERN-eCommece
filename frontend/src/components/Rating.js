@@ -65,7 +65,9 @@ const Rating = ({ value, text }) => {
         ></i>
       </span>
 
-      <span title={`based on ${text} reviews`}>{text ? `(${text})` : ""}</span>
+      <span title={`based on ${text} reviews`}>
+        {text ? `${text} reviews` : ""}
+      </span>
     </div>
   );
 };
