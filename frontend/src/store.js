@@ -4,7 +4,7 @@ import { producytListReducer } from "./reducers/productReducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const reducer = combineReducers({
-  producytList: producytListReducer,
+  productList: producytListReducer,
 });
 
 const intialState = {};
