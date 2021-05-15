@@ -15,7 +15,7 @@ import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
-export const ProductScreen = ({ match }) => {
+export const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(0);
 
   const dispatch = useDispatch();
@@ -23,6 +23,10 @@ export const ProductScreen = ({ match }) => {
   const productDetails = useSelector((state) => state.productDetails);
 
   const { loading, error, product } = productDetails;
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id));
@@ -99,6 +103,7 @@ export const ProductScreen = ({ match }) => {
 
                 <ListGroup.Item>
                   <Button
+                    onClick={addToCartHandler}
                     className="btn-block"
                     type="button"
                     disabled={product.countInStock === 0}
