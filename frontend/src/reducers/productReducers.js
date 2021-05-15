@@ -13,7 +13,7 @@ export const producytListReducer = (state = { products: [] }, action) => {
       return { loading: false, products: action.payload };
 
     case PRODUCT_LIST_FAIL:
-      return { loading: false, products: action.payload };
+      return { loading: false, error: action.payload };
 
     default:
       return state;
