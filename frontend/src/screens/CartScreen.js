@@ -45,6 +45,7 @@ const CartScreen = ({ match, location, history }) => {
           </Message>
         ) : (
           <>
+            <Message>{`You've Total ${cartItems.length} Products in your cart`}</Message>
             <ListGroup variant="flush">
               {cartItems.map((item) => (
                 <ListGroup.Item key={item.product}>
@@ -64,7 +65,6 @@ const CartScreen = ({ match, location, history }) => {
                           dispatch(
                             addToCart(item.product, Number(e.target.value))
                           );
-                          console.log(e.target.value, item.qty);
                         }}
                       >
                         {[...Array(item.countInStock).keys()].map((x) => (
