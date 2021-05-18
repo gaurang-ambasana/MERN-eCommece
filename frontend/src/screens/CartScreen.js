@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Message from "../components/Message";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import {
   Row,
   Col,
@@ -25,8 +25,12 @@ const CartScreen = ({ match, location, history }) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  const removeFromCart = (id) => {
-    console.log(id);
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const checkoutHandler = () => {
+    history.push(`/login?redirect=shipping`);
   };
 
   useEffect(() => {
@@ -78,7 +82,7 @@ const CartScreen = ({ match, location, history }) => {
                       <Button
                         type="button"
                         variant="light"
-                        onClick={() => removeFromCart(item.product)}
+                        onClick={() => removeFromCartHandler(item.product)}
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
@@ -108,6 +112,7 @@ const CartScreen = ({ match, location, history }) => {
                 type="button"
                 className="btn-block"
                 disabled={cartItems.length === 0}
+                onClick={checkoutHandler}
               >
                 Proceed To Checkout
               </Button>
