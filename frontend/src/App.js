@@ -5,6 +5,7 @@ import HomeScreen from "./screens/HomeScreen.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ProductScreen } from "./screens/ProductScreen.js";
 import CartScreen from "./screens/CartScreen.js";
+import LoginScreen from "./screens/LoginScreen.js";
 
 const App = () => {
   return (
@@ -12,9 +13,10 @@ const App = () => {
       <Header />
       <main>
         <Container>
+          <Route path="/login" component={LoginScreen} />
+          <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/cart/:id?" component={CartScreen} />
           <Route path="/" component={HomeScreen} exact />
-          <Route path="/product/:id" component={ProductScreen} exact />
-          <Route path="/cart/:id?" component={CartScreen} exact />
         </Container>
       </main>
       <Footer />
