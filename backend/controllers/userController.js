@@ -47,6 +47,32 @@ export const registerUser = asyncHandler(async (req, res) => {
 
   const userExists = await User.findOne({ email });
 
+  const validatePassword = (userPassword) => {
+    const regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return regex.test(userPassword);
+  };
+
+  if (!name) {
+    res.status(400);
+    throw new Error("Name is required!");
+  }
+
+  if (!email) {
+    res.status(400);
+    throw new Error("Email is required!");
+  }
+
+  if (!password) {
+    res.status(400);
+    throw new Error("Password is required!");
+  } else {
+    if (!validatePassword(password)) {
+      throw new Error(
+        "Your Password should contains minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+      );
+    }
+  }
+
   if (userExists) {
     res.status(400);
     throw new Error("User Already Exists!!");
