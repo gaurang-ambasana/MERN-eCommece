@@ -67,6 +67,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Password is required!");
   } else {
     if (!validatePassword(password)) {
+      res.status(400);
       throw new Error(
         "Your Password should contains minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
       );
@@ -85,7 +86,7 @@ export const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (user) {
-    res.json({
+    res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
@@ -95,5 +96,42 @@ export const registerUser = asyncHandler(async (req, res) => {
   } else {
     res.status(400);
     throw new Error("Invalid User Data! Please retry :(");
+  }
+});
+
+export const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+
+  const validatePassword = (userPassword) => {
+    const regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return regex.test(userPassword);
+  };
+
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+
+    if (req.body.password) {
+      if (!validatePassword(req.body.password)) {
+        res.status(400);
+        throw new Error(
+          "Your Password should contains minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+        );
+      }
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: generateToken(updatedUser._id),
+    });
+  } else {
+    res.status(404);
+    throw new Error("user not found");
   }
 });
