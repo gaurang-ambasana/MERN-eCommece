@@ -1,4 +1,7 @@
 import {
+  USER_DETAILS_FAIL,
+  USER_DETAILS_REQUEST,
+  USER_DETAILS_SUCCESS,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -6,9 +9,6 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
-  USER_UPDATE_FAIL,
-  USER_UPDATE_REQUEST,
-  USER_UPDATE_SUCCESS,
 } from "../constants/userConstants.js";
 import axios from "axios";
 
@@ -92,10 +92,10 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-export const updateUser = (id) => async (dispatch, getState) => {
+export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_UPDATE_REQUEST,
+      type: USER_DETAILS_REQUEST,
     });
 
     const {
@@ -112,16 +112,20 @@ export const updateUser = (id) => async (dispatch, getState) => {
     const { data } = await axios.get(`/api/users/${id}`, config);
 
     dispatch({
-      type: USER_UPDATE_SUCCESS,
+      type: USER_DETAILS_SUCCESS,
       payload: data,
     });
   } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    if (message === "Not authorized, token failed") {
+      dispatch(logout());
+    }
     dispatch({
-      type: USER_UPDATE_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+      type: USER_DETAILS_FAIL,
+      payload: message,
     });
   }
 };
