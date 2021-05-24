@@ -1,1 +1,1 @@
-# MERN-eCommece
+# MERN-eCommerce
