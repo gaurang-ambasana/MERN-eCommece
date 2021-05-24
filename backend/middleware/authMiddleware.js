@@ -24,6 +24,6 @@ export const protect = asyncHandler(async (req, res, next) => {
 
   if (!token) {
     res.status(401);
-    throw new Error("no token found ");
+    throw new Error("no token found");
   }
 });
