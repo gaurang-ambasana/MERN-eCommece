@@ -64,7 +64,7 @@ const OrderScreen = ({ match }) => {
   };
 
   useEffect(() => {
-    if (!order || successPay) {
+    if (!order || successPay || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
       if (!order || order._id !== orderId) {
         dispatch(getOrderDetails(orderId));
