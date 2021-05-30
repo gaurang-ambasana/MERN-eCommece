@@ -10,7 +10,7 @@ This eCommerce App was created with MERN Stack.
 - pagination (if product on page > 10)
 - Product search feature (Coming Soon)
 - User profile with My Orders Section
-- Admin product management (Coming Soon)
+- Admin product management (CRUD operation)
 - Admin user management (CRUD Operations)
 - Admin Order details page (Coming Soon)
 - Mark orders as delivered option (for Admins only)
