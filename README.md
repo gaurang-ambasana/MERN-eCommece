@@ -69,13 +69,15 @@ npm run client
 
 You can use the following commands in order to seed the database with some sample users and products as well as use following command to destroy all data
 
-note: your mongoDB collection should be set in .env otherwise be ready for errors
+this will import only the data which is present in backend/data folder and for destroying it will destroy all you data (in case you've your added products, user and orders using admin or user functionality) so be careful while using destroy operation and also if you destroy and reimport again it will only re-import it will only import data which is available in user directory of backend/data. 
+
+note: your mongoDB connection proper link should be set in .env otherwise be ready for errors
 
 ```
 # Importing dummy data
 npm run data:import
 
-# Destroying seeded data
+# Destroying seeded data (Caution : all data will be gone either seeded or manually added all of this will be destroyed)
 npm run data:destroy
 ```
 
