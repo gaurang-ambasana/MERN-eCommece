@@ -1,4 +1,5 @@
 # MERN-eCommerce
+
 This eCommerce App was created with MERN Stack.
 
 ## Features
@@ -8,7 +9,7 @@ This eCommerce App was created with MERN Stack.
 - Top products carousel (Coming Soon)
 - pagination (if product on page > 10)
 - Product search feature (Coming Soon)
-- User profile with `myorders`
+- User profile with My Orders Section
 - Admin product management (Coming Soon)
 - Admin user management (CRUD Operations)
 - Admin Order details page (Coming Soon)
@@ -18,6 +19,7 @@ This eCommerce App was created with MERN Stack.
 - Database seeder (loading of some dummy data)
 
 ## Note on Issues
+
 Please do not post issues here as it could be related to your own code and concerns rather when taking the course, post those in Udemy Q/A section. If you clone THIS repo and there are issues, then you can submit it as well.
 
 Here is the course link : https://www.udemy.com/course/mern-ecommerce/
@@ -35,6 +37,8 @@ Also, when importing a file (not a package), make sure sure to add .js at the en
 Create a .env file (yes, name of file is only ".env")
 
 Please note you'll have to stop & restart server for every changes in .env file and it should be located in your root folder
+
+don't forget to set this up in your .gitignore to avoid publishing of MONGO_URI and PAYPAL_CLIENT_ID
 
 ```
 NODE_ENV = development
@@ -55,13 +59,13 @@ npm install
 ### Running your App
 
 ```
-# Running frontend (:3000) & backend (:5000) (backend will be used as proxy)
+# Running frontend (:3000) & backend (:5000) (backend PORT will be used as proxy)
 npm run dev
 
 # Running backend only
 npm run server
 
-# Running frontend only (won't run as it uses APIs from backend)
+# Running frontend only (won't be able to see it properly as it uses APIs from backend)
 npm run client
 ```
 
@@ -69,7 +73,7 @@ npm run client
 
 You can use the following commands in order to seed the database with some sample users and products as well as use following command to destroy all data
 
-this will import only the data which is present in backend/data folder and for destroying it will destroy all you data (in case you've your added products, user and orders using admin or user functionality) so be careful while using destroy operation and also if you destroy and reimport again it will only re-import it will only import data which is available in user directory of backend/data. 
+this will import only the data which is present in backend/data folder and for destroying it will destroy all you data (in case you've your added products, user and orders using admin or user functionality) so be careful while using destroy operation and also if you destroy and reimport again it will only re-import it will only import data which is available in user directory of backend/data.
 
 note: your mongoDB connection proper link should be set in .env otherwise be ready for errors
 
@@ -77,7 +81,8 @@ note: your mongoDB connection proper link should be set in .env otherwise be rea
 # Importing dummy data
 npm run data:import
 
-# Destroying seeded data (Caution : all data will be gone either seeded or manually added all of this will be destroyed)
+# Destroying seeded data
+(Caution : all data will be gone either seeded or manually added all of this will be destroyed)
 npm run data:destroy
 ```
 
@@ -90,9 +95,9 @@ admin@proshop.com (Admin)
 123456
 
 gaurang@proshop.com(user)
- 123456
+123456
 ```
 
-##Errors
+## Errors
 
-Errors that you see on page or in Postman are manually handled error messages so do not get surprised if you Google error and won't get resolution on stack overflow 😜
+Errors that you see on page or in Postman are manually handled error messages so do not get surprised if you Google error and don't get resolution on stack overflow 😜
