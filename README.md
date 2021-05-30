@@ -38,7 +38,7 @@ Create a .env file (yes, name of file is only ".env")
 
 Please note you'll have to stop & restart server for every changes in .env file and it should be located in your root folder
 
-don't forget to set this up in your .gitignore to avoid publishing of MONGO_URI and PAYPAL_CLIENT_ID
+don't forget to set this up in your .gitignore to avoid publishing of your private MONGO_URI and PAYPAL_CLIENT_ID
 
 ```
 NODE_ENV = development
