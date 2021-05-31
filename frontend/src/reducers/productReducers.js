@@ -8,6 +8,7 @@ import {
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
+  PRODUCT_DETAILS_RESET,
 } from "../constants/productConstants";
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -39,6 +40,9 @@ export const productDeatailsReducer = (
 
     case PRODUCT_DETAILS_FAIL:
       return { loading: false, error: action.payload };
+
+    case PRODUCT_DETAILS_RESET:
+      return { product: { reviews: [] } };
 
     default:
       return state;
