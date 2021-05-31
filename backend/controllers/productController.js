@@ -37,8 +37,7 @@ export const createProduct = asyncHandler(async (req, res) => {
     category: "sample category",
     countInStock: 0,
     numReviews: 0,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corrupti, voluptatibus quia qui temporibus aperiam. Aliquam officia quasi quaerat esse, quidem commodi recusandae et nulla assumenda id blanditiis! Atque, quia!",
+    description: "sample desc.",
   });
 
   const createdProduct = await newProduct.save();
