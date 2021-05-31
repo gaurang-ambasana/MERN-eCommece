@@ -8,7 +8,6 @@ import {
   PRODUCT_DELETE_REQUEST,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
-  PRODUCT_DETAILS_RESET,
 } from "../constants/productConstants";
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -33,16 +32,13 @@ export const productDeatailsReducer = (
 ) => {
   switch (action.type) {
     case PRODUCT_DETAILS_REQUEST:
-      return { loading: true, ...state };
+      return { loading: true };
 
     case PRODUCT_DETAILS_SUCCESS:
       return { loading: false, product: action.payload };
 
     case PRODUCT_DETAILS_FAIL:
       return { loading: false, error: action.payload };
-
-    case PRODUCT_DETAILS_RESET:
-      return { product: { reviews: [] } };
 
     default:
       return state;
