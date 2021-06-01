@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const Rating = ({ value, text }) => {
   return (
@@ -65,16 +64,9 @@ const Rating = ({ value, text }) => {
         ></i>
       </span>
 
-      <span title={`based on ${text} reviews`}>
-        {text ? `${text} reviews` : ""}
-      </span>
+      <span title={`based on ${text} reviews`}>{text ? `${text}` : ""}</span>
     </div>
   );
-};
-
-Rating.propTypes = {
-  value: PropTypes.string.isRequired,
-  text: PropTypes.number.isRequired,
 };
 
 export default Rating;
