@@ -12,6 +12,7 @@ import {
   ORDER_PAY_REQUEST,
   ORDER_PAY_SUCCESS,
 } from "../constants/orderConstants";
+import { logout } from "./userActions";
 import axios from "axios";
 
 export const createOrder = (order) => async (dispatch, getState) => {
@@ -145,7 +146,9 @@ export const listMyOrders = () => async (dispatch, getState) => {
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
-
+    if (message === "Not authorized, token failed") {
+      dispatch(logout());
+    }
     dispatch({
       type: ORDER_LIST_MY_FAIL,
       payload: message,
