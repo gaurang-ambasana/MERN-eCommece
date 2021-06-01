@@ -47,7 +47,7 @@ export const ProductScreen = ({ history, match }) => {
             <Image src={product.image} alt={product.name} fluid />
           </Col>
           <Col md={3}>
-            <ListGroup varient="flush">
+            <ListGroup variant="flush">
               <ListGroup.Item>
                 <h3>{product.name}</h3>
               </ListGroup.Item>
@@ -62,7 +62,7 @@ export const ProductScreen = ({ history, match }) => {
           </Col>
           <Col md={3}>
             <Card>
-              <ListGroup varient="flush">
+              <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>
