@@ -15,7 +15,7 @@ This eCommerce App was created with MERN Stack.
 - Admin Order details page (Coming Soon)
 - Mark orders as delivered option (for Admins only)
 - Checkout process (shipping address, payment method along with time)
-- PayPal (Sandbox)/ Cash on Delivery
+- PayPal (Sandbox)
 - Database seeder (loading of some dummy data)
 
 ## Note on Issues
