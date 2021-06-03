@@ -12,7 +12,7 @@ This eCommerce App was created with MERN Stack.
 - User profile with My Orders Section
 - Admin product management (CRUD operation)
 - Admin user management (CRUD Operations)
-- Admin Order details page (Coming Soon)
+- Admin Order details page
 - Mark orders as delivered option (for Admins only)
 - Checkout process (shipping address, payment method along with time)
 - PayPal (Sandbox)
