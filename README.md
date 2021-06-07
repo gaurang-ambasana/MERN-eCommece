@@ -5,7 +5,7 @@ This eCommerce App was created with MERN Stack.
 ## Features
 
 - shopping cart (Add, remove, update stock etc.)
-- Product reviews and ratings (Coming Soon)
+- Product reviews and ratings
 - Top products carousel (Coming Soon)
 - pagination (if product on page > 10)
 - Product search feature (Coming Soon)
