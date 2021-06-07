@@ -70,6 +70,16 @@ export const updateProduct = asyncHandler(async (req, res) => {
 export const createProductReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
 
+  if (!rating) {
+    throw new Error("Please select Rating based on your experience");
+  }
+
+  if (!comment) {
+    throw new Error(
+      "Please add some comment to review product based on your experience"
+    );
+  }
+
   const product = await Product.findById(req.params.id);
 
   if (product) {
