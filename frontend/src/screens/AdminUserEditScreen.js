@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import { getUserDetails, updateUser } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
 import { USER_UPDATE_RESET } from "../constants/userConstants";
+import Meta from "../components/Meta";
 
 const AdminUserEditScreen = ({ match, history }) => {
   const userId = match.params.id;
@@ -50,6 +51,7 @@ const AdminUserEditScreen = ({ match, history }) => {
 
   return (
     <>
+      <Meta title="User Edit | Admin" />
       <Link to="/admin/userlist" className="btn btn-light my-3">
         Go Back
       </Link>

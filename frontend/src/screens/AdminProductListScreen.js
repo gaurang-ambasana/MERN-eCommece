@@ -11,6 +11,7 @@ import {
 } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
 import Paginate from "../components/Paginate";
+import Meta from "../components/Meta";
 
 const AdminProductListScreen = ({ history, match }) => {
   const dispatch = useDispatch();
@@ -72,6 +73,7 @@ const AdminProductListScreen = ({ history, match }) => {
 
   return (
     <>
+      <Meta title="Products | Admin" />
       <Row className="align-items-center">
         <Col>
           <h1>Products</h1>

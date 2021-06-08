@@ -7,6 +7,7 @@ import Loader from "../components/Loader";
 import { Row, Col } from "react-bootstrap";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
+import Meta from "../components/Meta";
 
 const HomeScreen = ({ match }) => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const HomeScreen = ({ match }) => {
 
   return (
     <>
+      <Meta title="Welcome to ProShop | Home" />
       {!keyword && <ProductCarousel />}
       <h1>Latest Products</h1>
       {loading ? (

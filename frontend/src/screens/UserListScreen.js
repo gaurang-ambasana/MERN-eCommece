@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { deleteUser, listUsers } from "../actions/userActions";
+import Meta from "../components/Meta";
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const UserListScreen = ({ history }) => {
 
   return (
     <>
+      <Meta title="Users | Admin" />
       <h1>Users</h1>
       {loading ? (
         <Loader />
