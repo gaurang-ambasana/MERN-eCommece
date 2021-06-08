@@ -4,7 +4,8 @@ import { listProducts } from "../actions/productActions";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
@@ -26,7 +27,15 @@ const HomeScreen = ({ match }) => {
   return (
     <>
       <Meta title="Welcome to ProShop | Home" />
-      {!keyword && <ProductCarousel />}
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link to="/">
+          <Button className="btn btn-light" style={{ marginTop: "5px" }}>
+            Go Back
+          </Button>
+        </Link>
+      )}
       <h1>Latest Products</h1>
       {loading ? (
         <Loader />
