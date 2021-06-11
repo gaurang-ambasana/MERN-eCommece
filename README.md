@@ -6,16 +6,16 @@ This eCommerce App was created with MERN Stack.
 
 - shopping cart (Add, remove, update stock etc.)
 - Product reviews and ratings
-- Top products carousel (Coming Soon)
+- Top products carousel
 - pagination (if product on page > 10)
-- Product search feature (Coming Soon)
+- Product search feature
 - User profile with My Orders Section
 - Admin product management (CRUD operation)
 - Admin user management (CRUD Operations)
 - Admin Order details page
 - Mark orders as delivered option (for Admins only)
 - Checkout process (shipping address, payment method along with time)
-- PayPal (Sandbox)
+- PayPal Payment API (Sandbox)
 - Database seeder (loading of some dummy data)
 
 ## Note on Issues
@@ -94,7 +94,7 @@ note: password policy won't apply to manually imported data
 admin@proshop.com (Admin)
 123456
 
-gaurang@proshop.com(user)
+gaurang@gmail.com(user)
 123456
 ```
 
