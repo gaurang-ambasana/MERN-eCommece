@@ -7,13 +7,13 @@ This eCommerce App was created with MERN Stack.
 - shopping cart (Add, remove, update stock etc.)
 - Product reviews and ratings
 - Top products carousel
-- pagination (if product on page > 10)
-- Product search feature
-- User profile with My Orders Section
+- pagination (if product on page > 8)
+- Product search feature (keyword matching with name of product)
+- User profile with My Orders and Update Profile Section
 - Admin product management (CRUD operation)
 - Admin user management (CRUD Operations)
 - Admin Order details page
-- Mark orders as delivered option (for Admins only)
+- Mark orders as delivered option (for Admins and paid order only)
 - Checkout process (shipping address, payment method along with time)
 - PayPal Payment API (Sandbox)
 - Database seeder (loading of some dummy data)
