@@ -2,6 +2,8 @@
 
 This eCommerce App was created with MERN Stack.
 
+Live Link : https://mern-ecommerce-webapp.herokuapp.com/
+
 ## Features
 
 - shopping cart (Add, remove, update stock etc.)
